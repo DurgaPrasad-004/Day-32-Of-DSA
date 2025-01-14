@@ -42,3 +42,26 @@ int subarraysWithXorK(vector<int> a, int k) {
     return cnt;
 }
 //Time Complexity: O(N2)
+
+// Optimal approach
+int subarraywithXOrk(vector<int> a, int k){
+    int n = a.size();
+    int xr = 0;
+    map<int, int> mpp;
+    mpp[xr]++;
+    int cnt = 0;
+
+    for(int i = 0; i < n; i++){
+        xr = xr ^ a[i];
+
+        // by formulae x = xr ^ k;
+        int x = xr ^ k;
+
+        cnt += mpp[x];
+
+        // insert the prefix of xor till index
+        mpp[xr]++;
+    }
+    return cnt;
+}
+//Time Complexity: O(N) or O(N*logN
