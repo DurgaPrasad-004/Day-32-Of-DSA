@@ -65,3 +65,13 @@ int subarraywithXOrk(vector<int> a, int k){
     return cnt;
 }
 //Time Complexity: O(N) or O(N*logN
+
+int main()
+{
+    vector<int> a = {4, 2, 2, 6, 4};
+    int k = 6;
+    int ans = subarraysWithXorK(a, k);
+    cout << "The number of subarrays with XOR k is: "
+         << ans << "\n";
+    return 0;
+}
