@@ -110,3 +110,15 @@ vector<vector<int>> mergeOverlapping(vector<vector<int>> &arr){
 }
 
 //Time Complexity: O(N*logN) + O(2*N)
+
+int main()
+{
+    vector<vector<int>> arr = {{1, 3}, {8, 10}, {2, 6}, {15, 18}};
+    vector<vector<int>> ans = mergeOverlappingIntervals(arr);
+    cout << "The merged intervals are: " << "\n";
+    for (auto it : ans) {
+        cout << "[" << it[0] << ", " << it[1] << "] ";
+    }
+    cout << endl;
+    return 0;
+}
